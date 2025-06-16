@@ -28,6 +28,13 @@ from frappe.integrations.frappe_providers.frappecloud_billing import (
 	current_site_info,
 )
 
+@frappe.whitelist()
+def is_fc_site() -> bool
+	return False
+
+@frappe.whitelist()
+def current_site_info():
+	return None
 
 @frappe.whitelist()
 def autosave_section(section, code):
